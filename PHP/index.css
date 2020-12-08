@@ -1,0 +1,22 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#Banner {
+    width: 100vw;
+    height: 12vh;
+    object-fit: fill;
+}
+
+.w3-show {
+	height: calc(87.9999vh - 60px - 4em );
+	overflow: auto;
+}
+
+
+.font-ElMessiri {
+  font-family: "El Messiri";
+}

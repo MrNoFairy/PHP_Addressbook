@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Adressbook</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=El+Messiri&display=swap">
+<link rel="stylesheet" href="index.css">
+</head>
+<body class="font-ElMessiri">
+	<img id="Banner" src="ressources/NTBHeader.jpg" onclick="document.getElementById('pwdiv').style.display='block'">
+	<div>
+		<button onclick="accordeonManager('Accordeon1')" class="w3-button w3-block w3-grey w3-border w3-border-dark-grey w3-left-align">Projekt Web Programmierung</button>
+			<div id="Accordeon1" class="w3-show w3-animate-zoom">
+				<div class="w3-container w3-padding-16">
+					<div w3-include-html="ressources/info.html"></div>
+				</div>
+			</div>
+			
+		<button onclick="accordeonManager('Accordeon2')" class="w3-button w3-block w3-grey w3-border w3-border-dark-grey w3-left-align">Adressbuch</button>
+			<div id="Accordeon2" class="w3-hide w3-animate-zoom">
+				<div class="w3-container w3-padding-16">
+					<table class="w3-table-all">
+						<thead>
+							<tr>
+								<th onclick="loadTable('firstname')">Firstname</th>
+								<th onclick="loadTable('lastname')">Lastname</th>
+								<th onclick="loadTable('street')">Street</th>
+								<th onclick="loadTable('city')">City</th>
+								<th onclick="loadTable('telnr')">Telnr</th>
+							</tr>
+						</thead>
+						<tbody id="table1">
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+		<button onclick="accordeonManager('Accordeon3')" class="w3-button w3-block w3-grey w3-border w3-border-dark-grey w3-left-align">Manager</button>
+			<div id="Accordeon3" class="w3-hide w3-animate-zoom">
+				<div class="w3-container w3-padding-16">
+					<form id="multiForm">
+						<input class="w3-input w3-border" type="text" name="firstname" placeholder="enter firstname"/> <br/>
+						<input class="w3-input w3-border" type="text" name="lastname" placeholder="enter lastname"/> <br/>
+						<input class="w3-input w3-border" type="text" name="street" placeholder="enter street"/> <br/>
+						<input class="w3-input w3-border" type="text" name="city" placeholder="enter city"/> <br/>
+						<input class="w3-input w3-border" type="text" name="telnr" placeholder="enter telnr"/> <br/>
+						<button class="w3-third w3-input w3-border" formaction="php/insert.php" type="submit">Send</button>
+						<button class="w3-third w3-input w3-border" formaction="php/fetch.php" type="submit">Search</button>
+						<button class="w3-third w3-input w3-border" formaction="php/delete.php" type="submit">Delete</button>
+					</form>
+					<div class=" w3-padding-64">
+						<table class="w3-table-all" id="table2">
+						</table>
+					</div>
+				</div>	
+			</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="index.js"></script>
+</body>
+<footer>
+	<div id="pwdiv" class="w3-modal">
+    	<div class="w3-modal-content">
+    	  <div class="w3-container w3-padding-16">
+        	<span onclick="document.getElementById('pwdiv').style.display='none'" class="w3-button w3-display-right">&times;</span>
+			<input id = "pw" type="password" placeholder="Enter Password" name="psw" required>
+			</div>
+		</div>
+	</div>
+</footer>
+</html>
